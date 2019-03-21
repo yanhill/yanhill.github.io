@@ -1,0 +1,63 @@
+.container-buttons{
+    display:flex;
+    align-self:end;
+    position:fixed;
+    width:100%;
+    bottom:0px;
+    background: rgb(255, 255, 255);  
+    padding-top: 10px;
+    max-width:800px;
+    background:#87e895;
+}
+.container-buttons button{
+    background:#fff;
+    border: none;
+    border-radius: 3px;
+}
+.container-buttons > button{
+    flex-basis: 50%;
+    font-size: 1.3em;
+}
+.centered-buttons{
+    display:grid;
+    width:4em;
+    min-height: 8em;
+    margin:0px 0px 20px 0px;
+}
+.btn-result{
+    font-size: 1.1em;
+}
+.btn-clear{
+    align-self:flex-end;
+}
+.btn-back{
+    margin: 10px 10px 20px 20px;
+}
+.btn-front{
+    margin: 10px 20px 20px 10px;
+}
+.btn:active:enabled{
+    background:#ddd;
+}
+.btn:hover:enabled{
+    border: 1px rgb(124, 0, 240) solid;
+    color: rgb(174, 88, 255);
+}
+.container-buttons button:disabled{
+    color: #ccc;
+}
+@media (max-width: 500px){
+    .centered-buttons{
+        min-height: 7em;
+    }
+}
+@media (max-width: 300px){
+    .centered-buttons{
+        min-height: 5em;
+    }
+}
+@media (max-width: 200px){
+    .centered-buttons{
+        min-height: 4em;
+    }
+}
