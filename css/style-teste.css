@@ -1,0 +1,35 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin:0;
+    background:#180038;
+}
+.club {
+	min-height: 100%;
+	display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-width:800px;
+    margin:auto;
+}
+footer {
+    margin-top:198px;
+}
+@media (max-width: 500px){
+    footer{
+        margin-top:178px;
+    }
+    .club {
+        margin:auto;
+    }
+}
+@media (max-width: 300px){
+    footer{
+        margin-top:138px;
+    }
+}
+@media (max-width: 200px){
+    footer{
+        margin-top:118px;
+    }
+}
