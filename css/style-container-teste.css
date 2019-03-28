@@ -1,11 +1,11 @@
 @media (max-width: 225px){
     .container-1, .resultado-final{
-        font: 1.1em 'Yantramanav', sans-serif;
+        font-size: 1.1em;
     }
 }
 .container-1{
     display:flex;
-    font: 1.5em 'Yantramanav', sans-serif;
+    font-size: 1.5em;
     font-weight:200;
     align-self: start;
     padding-top:2em;
@@ -41,17 +41,24 @@
     flex:1;
 }
 .labelInputNumber{
-    font: .6em 'Yantramanav', sans-serif;
+    font-size: .6em;
     font-weight:200;
 }
-input[type='text'] { 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] { 
+    -moz-appearance:textfield;
     min-width:1.8em;
     max-width:10em;
     text-align: end;
-
-    background:none;
-    font: 1em 'Yantramanav', sans-serif;
-    font-weight:500;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1em;
+    font-weight:400;
     margin: 5px 0px 0px 5px;
     padding: 0px 5px 0px 5px;
     letter-spacing: 0.05em;    
@@ -61,18 +68,16 @@ input[type='text'] {
 
     color:hsl(271, 100%, 47%) ;
 }
-input[type='text']:hover{ 
+input[type='number']:hover{ 
     animation-name: none;
     background:rgba(124, 0, 240, 10%);
     border:1px hsl(271, 100%, 47%) solid; 
 }
-input[type='text']:focus{ 
+input[type='number']:focus{ 
     animation-name: none;
-    background:rgba(124, 0, 240, 10%);
     border:1px hsl(271, 100%, 47%) solid; 
-
     box-shadow: 0px 0px 3px 1px hsl(244, 100%, 50%);
-    background:white;
+    background:none;
 }
 input:not(:placeholder-shown) {
     animation-name: none;
@@ -96,7 +101,7 @@ input:placeholder-shown {
     margin:1em 0 2em 0;
 }
 .resultado-final{
-    font: 1.5em 'Yantramanav', sans-serif;
+    font-size: 1.5em;
     font-weight:400;
     padding:0 5px 0 5px;  
 }
@@ -106,6 +111,5 @@ input:placeholder-shown {
 @keyframes blink { 
     50% { 
         border:1px hsl(271, 100%, 50%) solid;
-       /* background:hsla(271, 100%, 50%, 0.158); */
     } 
 }
