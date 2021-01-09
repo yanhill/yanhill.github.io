@@ -1,15 +1,16 @@
 .container-buttons{
     display:flex;
     align-self:end;
-    position:fixed;
+    position:relative;
     width:100%;
     bottom:0px;
-    background: rgb(255, 255, 255);  
+    /* background: rgb(255, 255, 255);   */
     padding-top: 10px;
-    max-width:800px;
+    max-width: 600px;
+    border-radius: 0 0 10px 10px;
 }
 .container-buttons button{
-    background:#fff;
+    background: #333;
     border: none;
     border-radius: 3px;
 }
@@ -44,6 +45,12 @@
 }
 .container-buttons button:disabled{
     color: #ccc;
+}
+@media (max-width: 800px){
+    .container-buttons{
+    position:fixed;
+    border-radius: 0;
+    }
 }
 @media (max-width: 500px){
     .centered-buttons{
