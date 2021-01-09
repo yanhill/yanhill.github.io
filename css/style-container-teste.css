@@ -1,69 +1,115 @@
-.container-buttons{
+@media (max-width: 225px){
+    .container-1, .resultado-final{
+        font-size: 1.1em;
+    }
+}
+.container-1{
     display:flex;
-    align-self:end;
-    position:relative;
-    width:100%;
-    bottom:0px;
-    /* background: rgb(255, 255, 255);   */
-    padding-top: 10px;
-    max-width: 600px;
-    border-radius: 0 0 10px 10px;
+    font-size: 1.5em;
+    font-weight:200;
+    align-self: start;
+    padding-top:2em;
+    padding-left: 1em;
+    padding-right: 1em;
 }
-.container-buttons button{
-    background: #333;
-    border: none;
-    border-radius: 3px;
+.container-1 div:not(.box-2){
+    margin: 5px;
+    /* border:1px #fff solid;  */
 }
-.container-buttons > button{
-    flex-basis: 50%;
-    font-size: 1.3em;
+.cerebro{
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 100%;
+    border-radius: 5px;
+    margin: 20px 20px 0px 20px;
 }
-.centered-buttons{
-    display:grid;
-    width:4em;
-    min-height: 8em;
-    margin:0px 0px 20px 0px;
+.box-1{
+    flex:1;
+    order:1;
+    display:inline-block;
+    text-align: end;
 }
-.btn-result{
-    font-size: 1.1em;
+.box-2{
+    flex:none;
+    order:2;
+    border: 1px white solid;   
+    min-height:4em;
 }
-.btn-clear{
-    align-self:flex-end;
+.box-3{
+    order:3;
+    flex:1;
 }
-.btn-back{
-    margin: 10px 10px 20px 20px;
+.labelInputNumber{
+    font-size: .6em;
+    font-weight:200;
 }
-.btn-front{
-    margin: 10px 20px 20px 10px;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
-.btn:active:enabled{
-    background:#ddd;
+
+input[type='number'] { 
+    -moz-appearance:textfield;
+    min-width:1.8em;
+    max-width:10em;
+    text-align: end;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1em;
+    font-weight:400;
+    margin: 5px 0px 0px 5px;
+    padding: 0px 5px 0px 5px;
+    letter-spacing: 0.05em;    
+    background-color: #333;
+    border:none;
+    border-bottom:1px white solid;
+    border-radius:3px;
+    color:hsl(29, 100%, 62%) ;
 }
-.btn:hover:enabled{
-    border: 1px rgb(124, 0, 240) solid;
-    color: rgb(174, 88, 255);
+input[type='number']:hover{ 
+    animation-name: none;
+    background:rgba(124, 0, 240, 10%);
+    border:1px hsl(271, 100%, 47%) solid; 
 }
-.container-buttons button:disabled{
-    color: #ccc;
+input[type='number']:focus{ 
+    animation-name: none;
+    border:1px hsl(271, 100%, 47%) solid; 
+    box-shadow: 0px 0px 3px 1px hsl(244, 100%, 50%);
+    background:none;
 }
-@media (max-width: 800px){
-    .container-buttons{
-    position:fixed;
-    border-radius: 0;
-    }
+input:not(:placeholder-shown) {
+    animation-name: none;
 }
-@media (max-width: 500px){
-    .centered-buttons{
-        min-height: 7em;
-    }
+input:not(:placeholder-shown):hover {
+    animation-name: none;
 }
-@media (max-width: 300px){
-    .centered-buttons{
-        min-height: 5em;
-    }
+input:placeholder-shown {
+    animation-name: blink ;
+    animation-duration: .7s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ; 
 }
-@media (max-width: 200px){
-    .centered-buttons{
-        min-height: 4em;
-    }
+.container-result{
+    text-align: center;
+    align-self: start;
+    justify-self: center;
+    border-bottom: 2px white solid;
+    border-radius: 5px;
+    margin:1em 0 2em 0;
+}
+.resultado-final{
+    font-size: 1.5em;
+    font-weight:400;
+    padding:0 5px 0 5px;  
+    color: hsl(29, 100%, 62%);
+}
+.xis{
+    font-weight: 200;
+}
+@keyframes blink { 
+    50% { 
+        border:1px hsl(271, 100%, 50%) solid;
+    } 
 }
