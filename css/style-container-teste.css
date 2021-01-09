@@ -110,6 +110,6 @@ input:placeholder-shown {
 }
 @keyframes blink { 
     50% { 
-        border:1px hsl(271, 100%, 50%) solid;
+        background-color:hsl(29, 100%, 62%);
     } 
 }
