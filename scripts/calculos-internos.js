@@ -1,36 +1,180 @@
-function lastValueFrom(dividendOrDivisor) {
-    return $(dividendOrDivisor).val() || $(dividendOrDivisor).text();
-}
-var lastNumberIs = function returnLastTurn() {
-    if ($(".resultado").length % 2 == 0 && $(".resultado:last-child").last().hasClass("resultado-final") == false) {
-        return "dividend"
-    }
-    if ($(".resultado").length % 2 != 0 && $(".resultado:last-child").last().hasClass("resultado-final") == false) {
-        return "divisor"
-    }
-    if ($(".resultado:last-child").last().hasClass("resultado-final")){
-        return "final_result"
-    }
-}
-function deleteResults(){
-    const resultados = $(".resultado:not(.caixaDeTexto)");
-    if (resultados.length > 0) {
+var idDivisor = 0;
+var idDividendo = 0;
+var idTabIndex = 2;
+var resultadosObtidos = document.querySelectorAll(".resultado");
 
-        resultados.each(function () {
-            $(this).remove();
-        });
+var dividends = '.dividendo:last-child';
+var divisors = '.divisor:last-child';
 
-        idDivisor = 0;
-        idDividendo = 1;
+var turns = function () {
+    if (lastNumberIs() == "dividend" && lastValueFrom(dividends) > 1) {
+        return "dividend_turn";
+    }
+    if (lastNumberIs() == "divisor") {
+        return "divisor_turn";
+    }
+    if (lastNumberIs() == "dividend" && lastValueFrom(dividends) == 1) {
+        return "last_turn";
+    }
+    if (lastNumberIs() == "final_result") {
+        return "finished";
     }
 }
-window.onload = function chooseBackground(){
-    var backgroundColors = ["#B0D0FF", "#87E895", "#FFEF78"];
-    var sortPosition = Math.floor(Math.random() * backgroundColors.length)
-    var color =  backgroundColors[sortPosition] ;
+
+function paintLastOneFrom(whichOne){
+    var valores = document.getElementsByClassName("resultado");
+
+    for(let valor = 0; valor < valores.length ; valor++){
+        valores[valor].style.fontWeight = "200";
+        valores[valor].style.color = "white";
+    }
+
+    var textBox = document.getElementById("caixaDeTexto");
+    var textBoxStyle = textBox.style;
+    textBoxStyle.color = "white";
+
+    var valoresSelecionados = document.getElementsByClassName(whichOne);
+    var ultimoValor = valoresSelecionados[valoresSelecionados.length-1];
+    var ultimoValorStyle = ultimoValor.style;
+    ultimoValorStyle.fontWeight = "400";
+    // ultimoValorStyle.color = "hsl(271, 100%, 47%)";
+    ultimoValorStyle.color = "hsl(29, 100%, 62%)";
     
-    var headPart = document.getElementById("club");
-    var buttonsPart = document.getElementById("buttons");
-    headPart.style.backgroundColor = color ;
-    buttonsPart.style.backgroundColor = color ;
 }
+
+$('.btn-result').on("click", function goAll() {
+    while (turns() != "finished") {
+        $(".btn-front").click();
+    }
+});
+
+$('.btn-front').on("click", function goOn() {
+    switch (turns()) {
+       case "dividend_turn":{
+
+            for (var divisor = 2; divisor <= lastValueFrom(dividends); divisor++) {
+
+                if (lastValueFrom(dividends) % divisor === 0) {
+                    
+                    const divisorDiv = $(`<div id="divisor-${idDivisor}" class="resultado divisor divisor-${idDivisor}" tabindex="${idTabIndex}" tab="${divisor}" value="${divisor}" >${divisor}</div>`);                    
+                    $(".divisores").append(divisorDiv);
+
+                    idDivisor++;           
+                    paintLastOneFrom("divisor");
+
+                    break;
+                }
+            }
+
+            break;
+        }
+        case "divisor_turn":{
+            idDividendo++;
+
+            const nextDividend = (lastValueFrom(dividends) / lastValueFrom(divisors));
+            const dividendoDiv = $(`<div id="dividendo-${idDividendo}" class="resultado dividendo dividendo-${idDividendo}" tabindex="${idTabIndex}" tab="${nextDividend}" value="${nextDividend}" >${nextDividend}</div>`);
+
+            $(".dividendos").append(dividendoDiv);
+            paintLastOneFrom("dividendo");     
+
+              window.location.href = "#dividendo-"+idDividendo;
+
+            break;
+        }
+        case "last_turn":{
+            calculateFinalResult();
+            
+            /* MUDANCA DE CORES */
+            var valores = document.getElementsByClassName("resultado dividendo");
+            
+            for(let valor = 0; valor < valores.length ; valor++){
+                valores[valor].style.fontWeight = "200";
+                valores[valor].style.color = "white";
+            }
+
+            window.location.href = "#resultado-final";
+
+            break;
+        }
+    }
+    resultadosObtidos = document.querySelectorAll(".resultado");
+    idTabIndex++;
+});
+
+$('.btn-back').on("click", function goBack() {
+
+    switch(turns()){
+        case "dividend_turn":
+        case "last_turn":{
+            $(".dividendo:last-child:not(.caixaDeTexto)").remove();
+            idDividendo--;
+
+            paintLastOneFrom("divisor");
+
+            break;
+        }
+        case "divisor_turn":{
+            $(".divisor:last-child").remove();
+            idDivisor--;
+
+            paintLastOneFrom("dividendo");
+
+            break;
+        }
+        case "finished":{
+            $(".resultado-final").remove();
+
+            paintLastOneFrom("dividendo");
+            break;
+        }
+    }
+    idTabIndex--;
+});
+
+$('.btn-clear').on("click", function () {
+    document.getElementById("caixaDeTexto").value = "";
+    document.getElementById("caixaDeTexto").focus();
+
+    deleteResults();
+    $(".btn").prop("disabled", true);
+    
+});
+
+$('.caixaDeTexto').on("input change", function () {
+        deleteResults();
+
+        var textBox = document.getElementById("caixaDeTexto");
+        var textBoxStyle = textBox.style;
+        textBoxStyle.color = "hsl(29, 100%, 62%)";
+});
+
+$('.caixaDeTexto').bind("keydown", function deixaClicarComEnter(event) {
+    if ((event.key == "Enter" || event.key == " ")) {
+        $(".btn-result").click();
+    }
+});
+
+$('.container-buttons button, .caixaDeTexto').on("click input", function habilitarDesabilitarBotoes() {
+
+    if (document.getElementById("caixaDeTexto").value == "") {
+        $(".btn").prop("disabled", true);
+        console.log("a")
+    }
+
+    else if ($(".resultado").length == 0){
+        $(".btn-front, .btn-result").prop("disabled", false);
+        $(".btn-back, .btn-clear").prop("disabled", true);
+        $(".caixaDeTexto").focus();
+        console.log("b")
+    }
+    
+    else if(lastNumberIs() != "final_result") {
+        $(".btn").prop("disabled", false);
+        console.log("c")
+    }
+
+    else{
+        $(".btn-front, .btn-result").prop("disabled", true);
+        console.log("d")
+    }
+});
