@@ -26,18 +26,19 @@ function paintLastOneFrom(whichOne){
 
     for(let valor = 0; valor < valores.length ; valor++){
         valores[valor].style.fontWeight = "200";
-        valores[valor].style.color = "#000";
+        valores[valor].style.color = "white";
     }
 
     var textBox = document.getElementById("caixaDeTexto");
     var textBoxStyle = textBox.style;
-    textBoxStyle.color = "#000";
+    textBoxStyle.color = "white";
 
     var valoresSelecionados = document.getElementsByClassName(whichOne);
     var ultimoValor = valoresSelecionados[valoresSelecionados.length-1];
     var ultimoValorStyle = ultimoValor.style;
     ultimoValorStyle.fontWeight = "400";
-    ultimoValorStyle.color = "hsl(271, 100%, 47%)";   
+    // ultimoValorStyle.color = "hsl(271, 100%, 47%)";
+    ultimoValorStyle.color = "hsl(29, 100%, 62%)";
     
 }
 
@@ -88,7 +89,7 @@ $('.btn-front').on("click", function goOn() {
             
             for(let valor = 0; valor < valores.length ; valor++){
                 valores[valor].style.fontWeight = "200";
-                valores[valor].style.color = "#000";
+                valores[valor].style.color = "white";
             }
 
             window.location.href = "#resultado-final";
@@ -144,7 +145,7 @@ $('.caixaDeTexto').on("input change", function () {
 
         var textBox = document.getElementById("caixaDeTexto");
         var textBoxStyle = textBox.style;
-        textBoxStyle.color = "hsl(271, 100%, 47%)";
+        textBoxStyle.color = "hsl(29, 100%, 62%)";
 });
 
 $('.caixaDeTexto').bind("keydown", function deixaClicarComEnter(event) {
