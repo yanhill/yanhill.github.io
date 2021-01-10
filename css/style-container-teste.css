@@ -14,13 +14,12 @@
 }
 .container-1 div:not(.box-2){
     margin: 5px;
-    /* border:1px #fff solid;  */
+    /* border:1px #fff solid; */
 }
 .cerebro{
     display: grid;
     grid-template-rows: auto auto;
     height: 100%;
-    border-radius: 5px;
     margin: 20px 20px 0px 20px;
 }
 .box-1{
@@ -64,25 +63,28 @@ input[type='number'] {
     background-color: #333;
     border:none;
     border-bottom:1px white solid;
-    border-radius:3px;
-    color:hsl(29, 100%, 62%) ;
+    /* color:hsl(29, 100%, 62%) ; */
+    color:#333;
 }
 input[type='number']:hover{ 
     animation-name: none;
-    background:rgba(124, 0, 240, 10%);
-    border:1px hsl(271, 100%, 47%) solid; 
+    /* background:rgba(124, 0, 240, 10%);
+    border:1px hsl(271, 100%, 47%) solid;  */
 }
 input[type='number']:focus{ 
     animation-name: none;
-    border:1px hsl(271, 100%, 47%) solid; 
-    box-shadow: 0px 0px 3px 1px hsl(244, 100%, 50%);
+    /* border:1px hsl(271, 100%, 47%) solid; 
+    box-shadow: 0px 0px 3px 1px hsl(244, 100%, 50%); */
     background:none;
+    background-color:hsl(29, 100%, 62%);
 }
 input:not(:placeholder-shown) {
     animation-name: none;
+    background-color:hsl(29, 100%, 62%);
 }
 input:not(:placeholder-shown):hover {
     animation-name: none;
+    background-color:hsl(29, 100%, 62%);
 }
 input:placeholder-shown {
     animation-name: blink ;
@@ -96,14 +98,13 @@ input:placeholder-shown {
     align-self: start;
     justify-self: center;
     border-bottom: 2px white solid;
-    border-radius: 5px;
     margin:1em 0 2em 0;
 }
 .resultado-final{
     font-size: 1.5em;
     font-weight:400;
     padding:0 5px 0 5px;  
-    color: hsl(29, 100%, 62%);
+    color: orange;
 }
 .xis{
     font-weight: 200;
