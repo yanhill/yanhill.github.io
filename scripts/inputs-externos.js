@@ -38,7 +38,7 @@ function paintLastOneFrom(whichOne){
     var ultimoValorStyle = ultimoValor.style;
     ultimoValorStyle.fontWeight = "400";
     // ultimoValorStyle.color = "hsl(271, 100%, 47%)";
-    ultimoValorStyle.color = "hsl(29, 100%, 62%)";
+    //ultimoValorStyle.color = "hsl(29, 100%, 62%)";
     
 }
 
