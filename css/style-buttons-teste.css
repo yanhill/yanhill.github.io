@@ -10,9 +10,10 @@
     border-radius: 0 0 10px 10px;
 }
 .container-buttons button{
-    background: #333;
     border: none;
-    border-radius: 3px;
+    border-radius: 30px;
+    background: #777;
+    color: #fff;
 }
 .container-buttons > button{
     flex-basis: 50%;
@@ -44,7 +45,12 @@
     color: rgb(174, 88, 255);
 }
 .container-buttons button:disabled{
-    color: #ccc;
+    /* color: #ccc;
+    border: 1px solid #555; */
+    color: #eee;
+    border: 1px solid #555;
+    color: #555;
+    background: #222;
 }
 @media (max-width: 800px){
     .container-buttons{
