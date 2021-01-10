@@ -40,7 +40,7 @@
     background:#ddd;
 }
 .btn:hover:enabled{
-    border: 1px rgb(124, 0, 240) solid;
+    border: 1px hsl(29, 100%, 62%)solid;
     color: rgb(174, 88, 255);
 }
 .container-buttons button:disabled{
