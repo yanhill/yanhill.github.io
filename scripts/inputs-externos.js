@@ -31,7 +31,7 @@ function paintLastOneFrom(whichOne){
 
     var textBox = document.getElementById("caixaDeTexto");
     var textBoxStyle = textBox.style;
-    textBoxStyle.color = "white";
+    textBoxStyle.color = "#333";
 
     var valoresSelecionados = document.getElementsByClassName(whichOne);
     var ultimoValor = valoresSelecionados[valoresSelecionados.length-1];
@@ -145,7 +145,7 @@ $('.caixaDeTexto').on("input change", function () {
 
         var textBox = document.getElementById("caixaDeTexto");
         var textBoxStyle = textBox.style;
-        textBoxStyle.color = "hsl(29, 100%, 62%)";
+        textBoxStyle.color = "#333";
 });
 
 $('.caixaDeTexto').bind("keydown", function deixaClicarComEnter(event) {
@@ -176,5 +176,14 @@ $('.container-buttons button, .caixaDeTexto').on("click input", function habilit
     else{
         $(".btn-front, .btn-result").prop("disabled", true);
         console.log("d")
+    }
+});
+
+/* MUDAR TODOS OS DIVIDENDOS PARA LARANJA [GAMBIARRA] */
+$('.btn-result, .btn-front, .btn-back, .btn-clear').on("click", function changeDividendoColor() {
+    var valores = document.getElementsByClassName("divisor");
+            
+    for(let valor = 0; valor < valores.length ; valor++){
+        valores[valor].style.color = "orange";
     }
 });
