@@ -12,8 +12,7 @@
 .container-buttons button{
     border: none;
     border-radius: 30px;
-    background: #777;
-    color: #fff;
+    color: #222;
 }
 .container-buttons > button{
     flex-basis: 50%;
@@ -21,28 +20,38 @@
 }
 .centered-buttons{
     display:grid;
-    width:4em;
+    width:6em;
     min-height: 8em;
     margin:0px 0px 20px 0px;
 }
 .btn-result{
     font-size: 1.1em;
+    font-family: 'Yantramanav', sans-serif;
+font-size: 1.5em;
+font-weight: 40;
+height: 3em;
 }
 .btn-clear{
-    align-self:flex-end;
+    /* align-self:flex-end; */
+    /* height: 20px; */
+    /* margin-top: 10px; */
+    font-size: 1.5em;
+font-weight: 40;
 }
 .btn-back{
-    margin: 10px 10px 20px 20px;
+    margin: 0px 10px 20px 20px;
+    height: 6em;
 }
 .btn-front{
-    margin: 10px 20px 20px 10px;
+    margin: 0px 20px 20px 10px;
+    height: 6em;
 }
 .btn:active:enabled{
     background:#ddd;
 }
 .btn:hover:enabled{
-    border: 1px hsl(29, 100%, 62%)solid;
-    color: rgb(174, 88, 255);
+    /* border: 1px hsl(29, 100%, 62%)solid;
+    color: rgb(174, 88, 255); */
 }
 .container-buttons button:disabled{
     /* color: #ccc;
@@ -60,16 +69,16 @@
 }
 @media (max-width: 500px){
     .centered-buttons{
-        min-height: 7em;
+        min-height: 10em;
     }
 }
 @media (max-width: 300px){
     .centered-buttons{
-        min-height: 5em;
+        min-height: 8em;
     }
 }
 @media (max-width: 200px){
     .centered-buttons{
-        min-height: 4em;
+        width: 6em;
     }
 }
