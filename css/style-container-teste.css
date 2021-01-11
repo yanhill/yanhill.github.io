@@ -1,0 +1,116 @@
+@media (max-width: 225px){
+    .container-1, .resultado-final{
+        font-size: 1.1em;
+    }
+}
+.container-1{
+    display:flex;
+    font-size: 1.5em;
+    font-weight:200;
+    align-self: start;
+    padding-top:2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.container-1 div:not(.box-2){
+    margin: 5px;
+    /* border:1px #fff solid; */
+}
+.cerebro{
+    display: grid;
+    grid-template-rows: auto auto;
+    height: 100%;
+    margin: 20px 20px 0px 20px;
+}
+.box-1{
+    flex:1;
+    order:1;
+    display:inline-block;
+    text-align: end;
+}
+.box-2{
+    flex:none;
+    order:2;
+    border: 1px white solid;   
+    min-height:4em;
+}
+.box-3{
+    order:3;
+    flex:1;
+}
+.labelInputNumber{
+    font-size: .6em;
+    font-weight:200;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] { 
+    -moz-appearance:textfield;
+    min-width:1.8em;
+    max-width:10em;
+    text-align: end;
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1em;
+    font-weight:400;
+    margin: 5px 0px 0px 5px;
+    padding: 0px 5px 0px 5px;
+    letter-spacing: 0.05em;    
+    background-color: #333;
+    border:none;
+    border-bottom:1px white solid;
+    /* color:hsl(29, 100%, 62%) ; */
+    color:#333;
+}
+input[type='number']:hover{ 
+    animation-name: none;
+    /* background:rgba(124, 0, 240, 10%);
+    border:1px hsl(271, 100%, 47%) solid;  */
+}
+input[type='number']:focus{ 
+    animation-name: none;
+    /* border:1px hsl(271, 100%, 47%) solid; 
+    box-shadow: 0px 0px 3px 1px hsl(244, 100%, 50%); */
+    background:none;
+    background-color:hsl(29, 100%, 62%);
+}
+input:not(:placeholder-shown) {
+    animation-name: none;
+    background-color:hsl(29, 100%, 62%);
+}
+input:not(:placeholder-shown):hover {
+    animation-name: none;
+    background-color:hsl(29, 100%, 62%);
+}
+input:placeholder-shown {
+    animation-name: blink ;
+    animation-duration: .7s ;
+    animation-timing-function: step-end ;
+    animation-iteration-count: infinite ;
+    animation-direction: alternate ; 
+}
+.container-result{
+    text-align: center;
+    align-self: start;
+    justify-self: center;
+    border-bottom: 2px white solid;
+    margin:1em 0 2em 0;
+}
+.resultado-final{
+    font-size: 1.5em;
+    font-weight:400;
+    padding:0 5px 0 5px;  
+    color: orange;
+}
+.xis{
+    font-weight: 200;
+}
+@keyframes blink { 
+    50% { 
+        background-color:hsl(29, 100%, 62%);
+    } 
+}
