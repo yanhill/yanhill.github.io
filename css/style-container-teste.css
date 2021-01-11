@@ -12,6 +12,12 @@
     padding-left: 1em;
     padding-right: 1em;
 }
+.first-step-text {
+    font-family: 'Yantramanav', sans-serif;
+    font-size: 1.4em;
+    font-weight: 40;
+    color: white;
+}
 .container-1 div:not(.box-2){
     margin: 5px;
     /* border:1px #fff solid; */
@@ -97,7 +103,6 @@ input:placeholder-shown {
     text-align: center;
     align-self: start;
     justify-self: center;
-    border-bottom: 2px white solid;
     margin:1em 0 2em 0;
 }
 .resultado-final{
