@@ -114,6 +114,9 @@ input:placeholder-shown {
 .xis{
     font-weight: 200;
 }
+.divisor, .dividendo{
+    outline:none;
+}
 @keyframes blink { 
     50% { 
         background-color:hsl(29, 100%, 62%);
