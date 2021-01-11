@@ -1,13 +1,10 @@
-var cw = $('.centered-buttons').width();
-$('.btn-result').css({ 'height': cw });
+// var cw = $('.centered-buttons').width();
+// $('.btn-result').css({ 'height': cw });
 
-/* var brainWidth = $('.cerebro').width();
-$('.container-buttons').css({ 'width': brainWidth }); */
-
-$(window).resize(function resizeResultButton() {
-    cw = $('.centered-buttons').width();
-    $('.btn-result').css({ 'height': cw });
-});
+// $(window).resize(function resizeResultButton() {
+//     cw = $('.centered-buttons').width();
+//     $('.btn-result').css({ 'height': cw });
+// });
 
 (function resizableInput() {
     const textBox = document.querySelector('.caixaDeTexto');
