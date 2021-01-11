@@ -110,6 +110,7 @@ input:placeholder-shown {
     font-weight:400;
     padding:0 5px 0 5px;  
     color: orange;
+    outline:none;
 }
 .xis{
     font-weight: 200;
