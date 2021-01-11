@@ -20,14 +20,13 @@
 }
 .centered-buttons{
     display:grid;
-    width:6em;
-    min-height: 8em;
     margin:0px 0px 20px 0px;
+    width: 11em;
 }
 .btn-result{
     font-size: 1.1em;
     font-family: 'Yantramanav', sans-serif;
-font-size: 1.5em;
+font-size: 1.25em;
 font-weight: 40;
 height: 3em;
 }
@@ -35,16 +34,16 @@ height: 3em;
     /* align-self:flex-end; */
     /* height: 20px; */
     /* margin-top: 10px; */
-    font-size: 1.5em;
+    height: 30px;
+font-size: 1.25em;
+margin-top: 10px;
 font-weight: 40;
 }
 .btn-back{
     margin: 0px 10px 20px 20px;
-    height: 6em;
 }
 .btn-front{
     margin: 0px 20px 20px 10px;
-    height: 6em;
 }
 .btn:active:enabled{
     background:#ddd;
@@ -69,7 +68,6 @@ font-weight: 40;
 }
 @media (max-width: 500px){
     .centered-buttons{
-        min-height: 10em;
     }
 }
 @media (max-width: 300px){
