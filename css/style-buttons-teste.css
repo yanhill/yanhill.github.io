@@ -21,12 +21,12 @@
 .centered-buttons{
     display:grid;
     margin:0px 0px 20px 0px;
-    width: 11em;
+    width: 15em;
 }
 .btn-result{
     font-size: 1.1em;
     font-family: 'Yantramanav', sans-serif;
-font-size: 1.25em;
+font-size: 1.4em;
 font-weight: 40;
 height: 3em;
 }
@@ -35,7 +35,7 @@ height: 3em;
     /* height: 20px; */
     /* margin-top: 10px; */
     height: 30px;
-font-size: 1.25em;
+font-size: 1.2em;
 margin-top: 10px;
 font-weight: 40;
 }
@@ -48,16 +48,16 @@ font-weight: 40;
 .btn:active:enabled{
     background:#ddd;
 }
-.btn:hover:enabled{
-    /* border: 1px hsl(29, 100%, 62%)solid;
-    color: rgb(174, 88, 255); */
-}
+/* .btn:hover:enabled{
+    border: 1px hsl(29, 100%, 62%)solid;
+    color: rgb(174, 88, 255); 
+} */
 .container-buttons button:disabled{
     /* color: #ccc;
     border: 1px solid #555; */
     color: #eee;
-    border: 1px solid #555;
-    color: #555;
+    border: 1px solid #444;
+    color: #444;
     background: #222;
 }
 @media (max-width: 800px){
@@ -66,10 +66,10 @@ font-weight: 40;
     border-radius: 0;
     }
 }
-@media (max-width: 500px){
+/* @media (max-width: 500px){
     .centered-buttons{
     }
-}
+} */
 @media (max-width: 300px){
     .centered-buttons{
         min-height: 8em;
