@@ -6,6 +6,10 @@ var resultadosObtidos = document.querySelectorAll(".resultado");
 var dividends = '.dividendo:last-child';
 var divisors = '.divisor:last-child';
 
+
+
+var isTheBeginning = true;
+
 var turns = function () {
     if (lastNumberIs() == "dividend" && lastValueFrom(dividends) > 1) {
         return "dividend_turn";
@@ -39,7 +43,6 @@ function paintLastOneFrom(whichOne){
     ultimoValorStyle.fontWeight = "400";
     // ultimoValorStyle.color = "hsl(271, 100%, 47%)";
     //ultimoValorStyle.color = "hsl(29, 100%, 62%)";
-    
 }
 
 $('.btn-result').on("click", function goAll() {
@@ -54,14 +57,11 @@ $('.btn-front').on("click", function goOn() {
 
             for (var divisor = 2; divisor <= lastValueFrom(dividends); divisor++) {
 
-                if (lastValueFrom(dividends) % divisor === 0) {
-                    
+                if (lastValueFrom(dividends) % divisor === 0) {   
                     const divisorDiv = $(`<div id="divisor-${idDivisor}" class="resultado divisor divisor-${idDivisor}" tabindex="${idTabIndex}" tab="${divisor}" value="${divisor}" >${divisor}</div>`);                    
                     $(".divisores").append(divisorDiv);
-
                     idDivisor++;           
                     paintLastOneFrom("divisor");
-
                     break;
                 }
             }
@@ -76,9 +76,7 @@ $('.btn-front').on("click", function goOn() {
 
             $(".dividendos").append(dividendoDiv);
             paintLastOneFrom("dividendo");     
-
-              window.location.href = "#dividendo-"+idDividendo;
-
+            window.location.href = "#dividendo-"+idDividendo;
             break;
         }
         case "last_turn":{
@@ -91,9 +89,7 @@ $('.btn-front').on("click", function goOn() {
                 valores[valor].style.fontWeight = "200";
                 valores[valor].style.color = "white";
             }
-
             window.location.href = "#resultado-final";
-
             break;
         }
     }
@@ -108,22 +104,17 @@ $('.btn-back').on("click", function goBack() {
         case "last_turn":{
             $(".dividendo:last-child:not(.caixaDeTexto)").remove();
             idDividendo--;
-
             paintLastOneFrom("divisor");
-
             break;
         }
         case "divisor_turn":{
             $(".divisor:last-child").remove();
             idDivisor--;
-
             paintLastOneFrom("dividendo");
-
             break;
         }
         case "finished":{
             $(".resultado-final").remove();
-
             paintLastOneFrom("dividendo");
             break;
         }
@@ -136,8 +127,7 @@ $('.btn-clear').on("click", function () {
     document.getElementById("caixaDeTexto").focus();
 
     deleteResults();
-    $(".btn").prop("disabled", true);
-    
+    $(".btn").prop("disabled", true); 
 });
 
 $('.caixaDeTexto').on("input change", function () {
@@ -152,13 +142,23 @@ $('.caixaDeTexto').bind("keydown", function deixaClicarComEnter(event) {
     if ((event.key == "Enter" || event.key == " ")) {
         $(".btn-result").click();
     }
+
+
 });
 
 $('.container-buttons button, .caixaDeTexto').on("click input", function habilitarDesabilitarBotoes() {
 
     if (document.getElementById("caixaDeTexto").value == "") {
         $(".btn").prop("disabled", true);
-        console.log("a")
+
+            var textBox = document.getElementById("firstStepText");
+            textBox.innerHTML = "";
+
+            var containerResult = document.getElementById("containerResult")
+            containerResult.style.borderBottom = "2px white solid";
+
+            console.log("fui");
+        console.log("a");
     }
 
     else if ($(".resultado").length == 0){
