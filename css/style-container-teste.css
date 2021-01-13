@@ -8,9 +8,9 @@
     font-size: 1.5em;
     font-weight:200;
     align-self: start;
-    padding-top:2em;
+    /* padding-top:2em;
     padding-left: 1em;
-    padding-right: 1em;
+    padding-right: 1em; */
 }
 .first-step-text {
     font-family: 'Yantramanav', sans-serif;
@@ -24,9 +24,11 @@
 }
 .cerebro{
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
     height: 100%;
-    margin: 20px 20px 0px 20px;
+    margin: 32px 32px 0px 32px;
+    padding-top: 14vh;
+margin-bottom: 14vh;
 }
 .box-1{
     flex:1;
@@ -38,7 +40,7 @@
     flex:none;
     order:2;
     border: 1px white solid;   
-    min-height:4em;
+    min-height: 18.5vh;
 }
 .box-3{
     order:3;
@@ -57,7 +59,7 @@ input::-webkit-inner-spin-button {
 
 input[type='number'] { 
     -moz-appearance:textfield;
-    min-width:1.8em;
+    min-width: 16vw;
     max-width:10em;
     text-align: end;
     font-family: 'Yantramanav', sans-serif;
